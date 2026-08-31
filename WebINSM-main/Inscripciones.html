@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscripciones | INSM</title>
+<meta name="description" content="Formulario general de inscripción del Instituto Nuestra Señora de la Merced.">
+<link rel="icon" href="img/favicon.ico">
+<style>
+@font-face{font-family:Heuristica;src:url('fonts/Heuristica-Regular.ttf') format('truetype')}
+@font-face{font-family:Heuristica;src:url('fonts/Heuristica-Bold.ttf') format('truetype');font-weight:700}
+@font-face{font-family:Proxima;src:url('fonts/ProximaNova-Regular.ttf') format('truetype')}
+:root{--red:#c9152b;--red-dark:#9f1022;--gold:#dcae3d;--ink:#20252b;--muted:#68717b;--cream:#f7f5f0;--white:#fff;--line:#e8e5df;--shadow:0 18px 50px rgba(27,31,35,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Proxima,Arial,sans-serif;color:var(--ink);background:#f7f5f0;line-height:1.55}
+a{text-decoration:none;color:inherit}
+.topbar{background:#24282d;color:#fff;font-size:.82rem}.topbar-inner{max-width:1180px;margin:auto;padding:9px 24px;display:flex;justify-content:flex-end;gap:28px}
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.07)}
+.nav{max-width:1180px;margin:auto;padding:14px 24px;display:flex;align-items:center;gap:34px}.brand{display:flex;align-items:center;gap:13px;margin-right:auto}.brand img{width:55px;height:55px;object-fit:contain}.brand-text strong{font-family:Heuristica,serif;font-size:1.25rem;color:var(--red);display:block;line-height:1.05}.brand-text span{font-size:.72rem;letter-spacing:2px;color:#747474;text-transform:uppercase}
+nav ul{display:flex;list-style:none;gap:4px;align-items:center;flex-wrap:wrap}nav a{display:block;padding:10px 13px;border-radius:7px;font-size:.9rem;font-weight:600;color:#42474c;transition:.2s}nav a:hover{background:#f5eeee;color:var(--red)}.nav-inscripciones{color:var(--red)!important;background:#fff4f5;border:1px solid rgba(201,21,43,.18)}.nav-cta{background:var(--red)!important;color:#fff!important;padding:11px 18px!important;border-radius:4px!important}
+.hero{background:linear-gradient(120deg,#24282d 0%,#3a3f45 100%);color:white;padding:80px 24px 75px}.hero-inner{max-width:1180px;margin:auto}.eyebrow{display:inline-block;color:#f0cf75;font-weight:700;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}.hero h1{font-family:Heuristica,serif;font-size:clamp(2.6rem,5vw,4.5rem);line-height:1.05;margin-bottom:18px}.hero p{max-width:720px;color:#e6e7e8;font-size:1.08rem;line-height:1.75}
+.main{max-width:1180px;margin:0 auto;padding:65px 24px 90px}.intro{text-align:center;max-width:800px;margin:0 auto 42px}.intro h2{font-family:Heuristica,serif;color:var(--red);font-size:2.5rem;margin-bottom:12px}.intro p{color:var(--muted)}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:38px}.section-title{font-family:Heuristica,serif;color:#2b3137;font-size:1.45rem;margin:4px 0 20px;padding-bottom:10px;border-bottom:2px solid #f1eeee}.section-title:not(:first-child){margin-top:35px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}.full{grid-column:1/-1}.field{display:flex;flex-direction:column}.field label{font-weight:700;color:#3d454d;font-size:.92rem;margin-bottom:7px}.field input,.field select{width:100%;height:48px;border:1px solid #d9dde1;border-radius:10px;padding:0 13px;font:inherit;color:#29313a;background:#fff}.field input:focus,.field select:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(201,21,43,.09)}.help{font-size:.76rem;color:#8a9198;margin-top:5px;min-height:17px}.error{color:#b42335}.invalid{border-color:#b42335!important;background:#fff8f8!important}
+.levels{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:8px}.level-option{position:relative}.level-option input{position:absolute;opacity:0}.level-option label{display:block;text-align:center;padding:15px 10px;border:1px solid #d9dde1;border-radius:11px;cursor:pointer;font-weight:700;color:#4a535c;transition:.2s}.level-option input:checked+label{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 8px 18px rgba(201,21,43,.18)}
+.radio-row{display:flex;gap:25px;flex-wrap:wrap}.radio{display:flex;align-items:center;gap:8px;color:#4b555e}.radio input{accent-color:var(--red)}
+.actions{margin-top:30px;padding-top:25px;border-top:1px solid var(--line);display:flex;justify-content:flex-end}.submit{border:0;background:var(--red);color:#fff;padding:14px 28px;border-radius:8px;font:700 1rem Proxima,Arial;cursor:pointer;transition:.2s}.submit:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 10px 24px rgba(201,21,43,.2)}
+.status{display:none;padding:15px 18px;border-radius:10px;margin-bottom:22px}.status.success{display:block;background:#ecfdf3;color:#18794e;border:1px solid #b7ebcf}.status.error{display:block;background:#fff1f3;color:#b42335;border:1px solid #ffc7d0}
+footer{background:#24282d;color:#ddd;padding:30px 24px;text-align:center;font-size:.9rem}
+@media(max-width:900px){nav ul{justify-content:flex-end}.grid{grid-template-columns:1fr}.full{grid-column:auto}.levels{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.nav{padding:12px 16px}.brand img{width:45px;height:45px}.brand-text strong{font-size:1rem}.brand-text span{font-size:.58rem}.topbar{display:none}.nav{flex-wrap:wrap}.nav nav{width:100%}nav ul{justify-content:center}.hero{padding:55px 20px}.main{padding:45px 16px 65px}.form-card{padding:24px 18px}.levels{grid-template-columns:1fr}.actions{justify-content:stretch}.submit{width:100%}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner"><span>Instituto Nuestra Señora de la Merced</span><span>Arroyito · Córdoba</span></div></div>
+<header class="header">
+<div class="nav">
+<a class="brand" href="index.html"><img src="img/logo.png" alt="Logo INSM" onerror="this.style.display='none'"><div class="brand-text"><strong>INSM</strong><span>Nuestra Señora de la Merced</span></div></a>
+<nav><ul><li><a href="index.html">Inicio</a></li><li><a href="NuestroColegio.html">Institución</a></li><li><a href="index.html#niveles">Niveles</a></li><li><a href="Proyectos.html">Proyectos</a></li><li><a href="index.html#noticias">Noticias</a></li><li><a class="nav-inscripciones" href="Inscripciones.html">Inscripciones</a></li><li><a class="nav-cta" href="Contacto.html">Contacto</a></li></ul></nav>
+</div></header>
+
+<section class="hero"><div class="hero-inner"><span class="eyebrow">Ingreso al INSM</span><h1>Inscripciones</h1><p>Completá la solicitud de inscripción para ingresar a cualquiera de los niveles educativos de nuestra institución.</p></div></section>
+
+<main class="main">
+<div class="intro"><h2>Formulario de inscripción</h2><p>Seleccioná el nivel al que querés ingresar y completá los datos solicitados. La información quedará registrada como solicitud de ingreso.</p></div>
+<div class="form-card">
+<div id="status" class="status" aria-live="polite"></div>
+<form id="inscripcionForm" novalidate>
+<h3 class="section-title">Datos de ingreso</h3>
+<div class="grid">
+<div class="field full"><label>Nivel al que quiere ingresar *</label><div class="levels">
+<div class="level-option"><input type="radio" id="inicial" name="nivel" value="Nivel Inicial"><label for="inicial">Nivel Inicial</label></div>
+<div class="level-option"><input type="radio" id="primario" name="nivel" value="Nivel Primario"><label for="primario">Nivel Primario</label></div>
+<div class="level-option"><input type="radio" id="secundario" name="nivel" value="Nivel Secundario"><label for="secundario">Nivel Secundario</label></div>
+<div class="level-option"><input type="radio" id="terciario" name="nivel" value="Nivel Terciario"><label for="terciario">Nivel Terciario</label></div>
+</div><small id="error-nivel" class="help"></small></div>
+<div class="field"><label for="ciclo">Ciclo / año lectivo *</label><input id="ciclo" type="number" min="2024" max="2100" value="2026"><small id="error-ciclo" class="help"></small></div>
+<div class="field"><label for="curso">Curso / grado / año al que solicita ingresar *</label><select id="curso"><option value="">Seleccioná primero el nivel</option></select><small id="error-curso" class="help"></small></div>
+</div>
+
+<h3 class="section-title">Datos del estudiante</h3>
+<div class="grid">
+<div class="field"><label for="nombre">Nombre y apellido *</label><input id="nombre" type="text" autocomplete="name"><small id="error-nombre" class="help"></small></div>
+<div class="field"><label for="dni">DNI *</label><input id="dni" type="text" inputmode="numeric" maxlength="10" placeholder="Ej. 45123456"><small id="error-dni" class="help"></small></div>
+<div class="field"><label for="fecha">Fecha de nacimiento *</label><input id="fecha" type="date"><small id="error-fecha" class="help"></small></div>
+<div class="field"><label for="lugar">Lugar de nacimiento *</label><input id="lugar" type="text"><small id="error-lugar" class="help"></small></div>
+<div class="field full"><label for="domicilio">Domicilio *</label><input id="domicilio" type="text" autocomplete="street-address"><small id="error-domicilio" class="help"></small></div>
+</div>
+
+<h3 class="section-title">Datos del responsable</h3>
+<div class="grid">
+<div class="field"><label for="responsable">Nombre y apellido *</label><input id="responsable" type="text" autocomplete="name"><small id="error-responsable" class="help"></small></div>
+<div class="field"><label for="dniResponsable">DNI del responsable *</label><input id="dniResponsable" type="text" inputmode="numeric" maxlength="10"><small id="error-dniResponsable" class="help"></small></div>
+<div class="field"><label for="parentesco">Parentesco *</label><select id="parentesco"><option value="">Seleccioná una opción</option><option>Madre</option><option>Padre</option><option>Tutor/a</option><option>Otro</option></select><small id="error-parentesco" class="help"></small></div>
+<div class="field"><label for="telefono">Teléfono *</label><input id="telefono" type="tel" autocomplete="tel"><small id="error-telefono" class="help"></small></div>
+<div class="field"><label for="email">Email *</label><input id="email" type="email" autocomplete="email"><small id="error-email" class="help"></small></div>
+</div>
+
+<h3 class="section-title">Información educativa</h3>
+<div class="grid">
+<div class="field"><label>¿Ya pertenece al INSM? *</label><div class="radio-row"><label class="radio"><input type="radio" name="pertenece" value="Sí"> Sí</label><label class="radio"><input type="radio" name="pertenece" value="No"> No</label></div><small id="error-pertenece" class="help"></small></div>
+<div class="field"><label for="procedencia">Institución de procedencia *</label><input id="procedencia" type="text" placeholder="Si no corresponde, indicar 'No corresponde'"><small id="error-procedencia" class="help"></small></div>
+</div>
+
+<div class="actions"><button class="submit" type="submit">Enviar solicitud de inscripción</button></div>
+</form>
+</div>
+</main>
+<footer>Instituto Nuestra Señora de la Merced · INSM</footer>
+<script src="js/inscripciones.js"></script>
+</body>
+</html>

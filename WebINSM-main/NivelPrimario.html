@@ -1708,14 +1708,176 @@
                 .menu-content { grid-template-columns: 1fr; }
                 .hero-content h1 { font-size: 2.8em; }
             }
+        
+            /* =========================================================
+               PREINSCRIPCIÓN NIVEL PRIMARIO
+            ========================================================= */
+            .preinscripcion-section {
+                background: linear-gradient(135deg, #f4f6f8 0%, #ffffff 100%);
+                padding: 70px 0;
+                border-top: 1px solid rgba(26,79,141,.08);
+            }
+            .preinscripcion-wrap {
+                max-width: 1180px;
+                margin: 0 auto;
+                padding: 0 30px;
+                display: grid;
+                grid-template-columns: .9fr 1.1fr;
+                gap: 48px;
+                align-items: start;
+            }
+            .preinscripcion-intro h2,
+            .preinscripcion-form h2 {
+                color: #1a4f8d;
+                margin: 0 0 14px;
+                font-size: clamp(2rem, 4vw, 3rem);
+            }
+            .preinscripcion-intro > p {
+                font-family: 'ProximaNova', sans-serif;
+                color: #5d6773;
+                line-height: 1.75;
+                font-size: 1.05rem;
+            }
+            .preinscripcion-badge {
+                display: inline-block;
+                background: rgba(26,79,141,.1);
+                color: #1a4f8d;
+                padding: 8px 14px;
+                border-radius: 999px;
+                font-family: 'ProximaNova', sans-serif;
+                font-weight: 700;
+                font-size: .78rem;
+                letter-spacing: .08em;
+                margin-bottom: 15px;
+            }
+            .preinscripcion-steps {
+                display: grid;
+                gap: 14px;
+                margin-top: 28px;
+            }
+            .preinscripcion-step {
+                display: flex;
+                gap: 15px;
+                padding: 18px;
+                background: #fff;
+                border: 1px solid rgba(26,79,141,.10);
+                border-radius: 16px;
+                box-shadow: 0 8px 22px rgba(26,79,141,.06);
+            }
+            .preinscripcion-step .num {
+                flex: 0 0 42px;
+                width: 42px;
+                height: 42px;
+                display: grid;
+                place-items: center;
+                border-radius: 50%;
+                background: #1a4f8d;
+                color: #fff;
+                font-family: 'ProximaNova', sans-serif;
+                font-weight: 700;
+            }
+            .preinscripcion-step h3 { margin: 2px 0 6px; color: #26384a; font-size: 1.05rem; }
+            .preinscripcion-step p { margin: 0; color: #68727d; line-height: 1.55; font-family: 'ProximaNova', sans-serif; }
+            .preinscripcion-note {
+                margin-top: 22px;
+                padding: 16px 18px;
+                border-left: 4px solid #1a4f8d;
+                background: #eaf2fb;
+                border-radius: 0 12px 12px 0;
+                color: #38536f;
+                font-family: 'ProximaNova', sans-serif;
+                line-height: 1.6;
+            }
+            .preinscripcion-form {
+                background: #fff;
+                padding: 34px;
+                border-radius: 20px;
+                box-shadow: 0 18px 45px rgba(26,79,141,.12);
+                border: 1px solid rgba(26,79,141,.10);
+            }
+            .preinscripcion-form > p {
+                margin: 0 0 24px;
+                color: #6b7580;
+                font-family: 'ProximaNova', sans-serif;
+            }
+            .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+            .form-group-primary { display: flex; flex-direction: column; margin-bottom: 17px; }
+            .form-group-primary.full { grid-column: 1 / -1; }
+            .form-group-primary label {
+                margin-bottom: 7px;
+                font-family: 'ProximaNova', sans-serif;
+                font-weight: 700;
+                color: #33495f;
+                font-size: .92rem;
+            }
+            .form-group-primary input,
+            .form-group-primary select,
+            .form-group-primary textarea {
+                box-sizing: border-box;
+                width: 100%;
+                border: 1px solid #d8e0e8;
+                border-radius: 11px;
+                padding: 13px 14px;
+                font-family: 'ProximaNova', sans-serif;
+                font-size: .95rem;
+                color: #29394a;
+                background: #fff;
+            }
+            .form-group-primary textarea { min-height: 110px; resize: vertical; }
+            .form-group-primary input:focus,
+            .form-group-primary select:focus,
+            .form-group-primary textarea:focus {
+                outline: none;
+                border-color: #1a4f8d;
+                box-shadow: 0 0 0 4px rgba(26,79,141,.10);
+            }
+            .form-section-title {
+                grid-column: 1 / -1;
+                margin: 7px 0 2px;
+                color: #1a4f8d;
+                font-size: 1rem;
+                border-bottom: 1px solid #e8edf2;
+                padding-bottom: 9px;
+            }
+            .form-error { min-height: 17px; margin-top: 5px; color: #b42335; font-family: 'ProximaNova', sans-serif; font-size: .78rem; }
+            .field-invalid { border-color: #b42335 !important; background: #fff8f8 !important; }
+            .primary-check { display:flex; gap:10px; align-items:flex-start; margin: 4px 0 18px; font-family:'ProximaNova',sans-serif; color:#586574; line-height:1.5; font-size:.9rem; }
+            .primary-check input { margin-top: 3px; accent-color:#1a4f8d; }
+            .preinscripcion-submit {
+                width: 100%;
+                border: none;
+                border-radius: 12px;
+                padding: 15px 20px;
+                background: #1a4f8d;
+                color: #fff;
+                font-family: 'ProximaNova', sans-serif;
+                font-weight: 700;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+            }
+            .preinscripcion-submit:hover { background:#123b6d; transform:translateY(-2px); box-shadow:0 10px 22px rgba(26,79,141,.22); }
+            .form-status { display:none; margin-bottom:18px; padding:13px 15px; border-radius:10px; font-family:'ProximaNova',sans-serif; line-height:1.5; }
+            .form-status.success { display:block; background:#ecfdf3; color:#18794e; border:1px solid #b7ebcf; }
+            .form-status.error { display:block; background:#fff1f3; color:#b42335; border:1px solid #ffc7d0; }
+            @media (max-width: 900px) {
+                .preinscripcion-wrap { grid-template-columns: 1fr; gap: 32px; }
+            }
+            @media (max-width: 600px) {
+                .preinscripcion-section { padding: 55px 0; }
+                .preinscripcion-wrap { padding: 0 18px; }
+                .preinscripcion-form { padding: 24px 18px; }
+                .form-grid { grid-template-columns: 1fr; gap: 0; }
+                .form-group-primary.full, .form-section-title { grid-column: auto; }
+            }
+
         </style>
         <link rel="icon" href="img/favicon.ico" type="image/ico" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
-        <link rel="stylesheet" href="css/estilos-julieta.css">
-</head>
+    </head>
     <body>
         <header>
             <div class="header-main">
@@ -2088,6 +2250,89 @@
                     </div>
                 </div>
             </section>
+
+        <!-- =========================================================
+             PREINSCRIPCIÓN NIVEL PRIMARIO
+        ========================================================== -->
+        <section class="preinscripcion-section" id="inscripciones">
+            <div class="preinscripcion-wrap">
+                <div class="preinscripcion-intro">
+                    <span class="preinscripcion-badge">INSCRIPCIONES</span>
+                    <h2>Preinscripción al Nivel Primario</h2>
+                    <p>Completá este formulario para registrar una solicitud de preinscripción para el Nivel Primario. La institución podrá utilizar estos datos para continuar el contacto con la familia.</p>
+                    <div class="preinscripcion-steps">
+                        <div class="preinscripcion-step"><div class="num">1</div><div><h3>Completá los datos</h3><p>Ingresá la información del alumno o alumna y de la persona responsable.</p></div></div>
+                        <div class="preinscripcion-step"><div class="num">2</div><div><h3>Elegí el grado</h3><p>Indicá el grado al que desea ingresar el estudiante.</p></div></div>
+                        <div class="preinscripcion-step"><div class="num">3</div><div><h3>Enviá la solicitud</h3><p>Revisá los datos y enviá la preinscripción para dejar registrada la solicitud.</p></div></div>
+                    </div>
+                    <div class="preinscripcion-note">La preinscripción es una solicitud de ingreso y no garantiza automáticamente la disponibilidad de una vacante.</div>
+                </div>
+
+                <div class="preinscripcion-form">
+                    <h2>Formulario de inscripción</h2>
+                    <p>Los campos marcados son necesarios para registrar la solicitud.</p>
+                    <div id="form-status" class="form-status" aria-live="polite"></div>
+
+                    <form id="formulario-inscripcion" novalidate>
+                        <div class="form-grid">
+                            <h3 class="form-section-title">Datos del alumno/a</h3>
+                            <div class="form-group-primary">
+                                <label for="nombre-alumno">Nombre</label>
+                                <input id="nombre-alumno" type="text" autocomplete="given-name">
+                                <small id="error-nombre-alumno" class="form-error"></small>
+                            </div>
+                            <div class="form-group-primary">
+                                <label for="apellido-alumno">Apellido</label>
+                                <input id="apellido-alumno" type="text" autocomplete="family-name">
+                                <small id="error-apellido-alumno" class="form-error"></small>
+                            </div>
+                            <div class="form-group-primary">
+                                <label for="fecha-nacimiento">Fecha de nacimiento</label>
+                                <input id="fecha-nacimiento" type="date">
+                                <small id="error-fecha-nacimiento" class="form-error"></small>
+                            </div>
+                            <div class="form-group-primary">
+                                <label for="grado">Grado al que desea ingresar</label>
+                                <select id="grado">
+                                    <option value="">Seleccioná una opción</option>
+                                    <option>1° grado</option><option>2° grado</option><option>3° grado</option>
+                                    <option>4° grado</option><option>5° grado</option><option>6° grado</option>
+                                </select>
+                                <small id="error-grado" class="form-error"></small>
+                            </div>
+
+                            <h3 class="form-section-title">Datos del responsable</h3>
+                            <div class="form-group-primary full">
+                                <label for="nombre-responsable">Nombre y apellido</label>
+                                <input id="nombre-responsable" type="text" autocomplete="name">
+                                <small id="error-nombre-responsable" class="form-error"></small>
+                            </div>
+                            <div class="form-group-primary">
+                                <label for="telefono">Teléfono</label>
+                                <input id="telefono" type="tel" autocomplete="tel" placeholder="Ej: 3572 123456">
+                                <small id="error-telefono" class="form-error"></small>
+                            </div>
+                            <div class="form-group-primary">
+                                <label for="email">Correo electrónico</label>
+                                <input id="email" type="email" autocomplete="email" placeholder="ejemplo@email.com">
+                                <small id="error-email" class="form-error"></small>
+                            </div>
+                            <div class="form-group-primary full">
+                                <label for="mensaje">Consulta o información adicional</label>
+                                <textarea id="mensaje" placeholder="Escribí aquí cualquier consulta que quieras realizar..."></textarea>
+                            </div>
+                        </div>
+                        <label class="primary-check">
+                            <input id="aceptar" type="checkbox">
+                            <span>Confirmo que los datos ingresados son correctos y autorizo su registro para esta solicitud de preinscripción.</span>
+                        </label>
+                        <small id="error-aceptar" class="form-error"></small>
+                        <button class="preinscripcion-submit" type="submit"><i class="fas fa-paper-plane"></i> Enviar preinscripción</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
         </main>
 
         <footer class="footer">
@@ -2706,6 +2951,101 @@
                     }
                 });
             });
+
+            // =========================================================
+            // PREINSCRIPCIÓN NIVEL PRIMARIO
+            // Guarda las solicitudes localmente para este avance.
+            // =========================================================
+            document.addEventListener('DOMContentLoaded', () => {
+                const form = document.getElementById('formulario-inscripcion');
+                if (!form) return;
+
+                const status = document.getElementById('form-status');
+                const ids = ['nombre-alumno','apellido-alumno','fecha-nacimiento','grado','nombre-responsable','telefono','email','aceptar'];
+
+                const showError = (id, message) => {
+                    const el = document.getElementById(id);
+                    const err = document.getElementById('error-' + id);
+                    if (el && id !== 'aceptar') el.classList.add('field-invalid');
+                    if (err) err.textContent = message;
+                };
+
+                const clearErrors = () => {
+                    ids.forEach(id => {
+                        const el = document.getElementById(id);
+                        const err = document.getElementById('error-' + id);
+                        if (el) el.classList.remove('field-invalid');
+                        if (err) err.textContent = '';
+                    });
+                    status.className = 'form-status';
+                    status.textContent = '';
+                };
+
+                const validName = value => /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s'-]{2,}$/.test(value.trim());
+                const validEmail = value => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+                const validPhone = value => value.replace(/\D/g, '').length >= 8;
+
+                form.addEventListener('submit', event => {
+                    event.preventDefault();
+                    clearErrors();
+
+                    const nombre = document.getElementById('nombre-alumno').value.trim();
+                    const apellido = document.getElementById('apellido-alumno').value.trim();
+                    const fechaNacimiento = document.getElementById('fecha-nacimiento').value;
+                    const grado = document.getElementById('grado').value;
+                    const responsable = document.getElementById('nombre-responsable').value.trim();
+                    const telefono = document.getElementById('telefono').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const mensaje = document.getElementById('mensaje').value.trim();
+                    const aceptar = document.getElementById('aceptar').checked;
+
+                    let ok = true;
+                    if (!validName(nombre)) { showError('nombre-alumno','Ingresá un nombre válido.'); ok = false; }
+                    if (!validName(apellido)) { showError('apellido-alumno','Ingresá un apellido válido.'); ok = false; }
+                    if (!fechaNacimiento || new Date(fechaNacimiento) > new Date()) { showError('fecha-nacimiento','Ingresá una fecha de nacimiento válida.'); ok = false; }
+                    if (!grado) { showError('grado','Seleccioná un grado.'); ok = false; }
+                    if (responsable.length < 4) { showError('nombre-responsable','Ingresá el nombre y apellido del responsable.'); ok = false; }
+                    if (!validPhone(telefono)) { showError('telefono','Ingresá un teléfono válido.'); ok = false; }
+                    if (!validEmail(email)) { showError('email','Ingresá un correo electrónico válido.'); ok = false; }
+                    if (!aceptar) { showError('aceptar','Debés confirmar que los datos son correctos.'); ok = false; }
+
+                    if (!ok) {
+                        status.textContent = 'Revisá los campos marcados antes de enviar la solicitud.';
+                        status.className = 'form-status error';
+                        return;
+                    }
+
+                    const key = 'inscripcionesPrimaria';
+                    let registros = [];
+                    try { registros = JSON.parse(localStorage.getItem(key) || '[]'); } catch (_) { registros = []; }
+
+                    const duplicate = registros.some(r =>
+                        r.nombre.toLowerCase() === nombre.toLowerCase() &&
+                        r.apellido.toLowerCase() === apellido.toLowerCase() &&
+                        r.grado === grado
+                    );
+
+                    if (duplicate) {
+                        status.textContent = 'Ya existe una solicitud registrada para este alumno/a y ese grado en este navegador.';
+                        status.className = 'form-status error';
+                        return;
+                    }
+
+                    registros.push({
+                        id: Date.now(),
+                        nombre, apellido, fechaNacimiento, grado,
+                        responsable, telefono, email, mensaje,
+                        fechaRegistro: new Date().toLocaleString('es-AR')
+                    });
+
+                    localStorage.setItem(key, JSON.stringify(registros));
+                    form.reset();
+                    status.textContent = '¡Preinscripción enviada correctamente! La solicitud quedó registrada.';
+                    status.className = 'form-status success';
+                    status.scrollIntoView({behavior:'smooth', block:'nearest'});
+                });
+            });
+
         </script>
     </body>
 </html>
